@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/counterstrafe-helper/',
+  base: 'https://wk-99.github.io/counterstrafe-helper/',
   server: {
     port: 5173,
     watch: {
