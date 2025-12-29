@@ -100,8 +100,6 @@ function App() {
       return; // opposite key is not pressed
     } else {
       // Opposite key is/was pressed (overlapping case)
-      console.log("Overlap occurred...");
-
       const overlap = performance.now() - oppositeKeyPress.downAt;
       setOverlap(overlap);
       recordCounterstrafe(e.key, oppositeKeyPress.key, overlap, undefined);
