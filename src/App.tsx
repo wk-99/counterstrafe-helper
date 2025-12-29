@@ -150,7 +150,7 @@ function App() {
             {delay} ms
           </div>
         ) : (
-          <div className="overlap-delay-display">
+          <div>
             <b>Overlap:</b>
             <br />
             {overlap} ms
