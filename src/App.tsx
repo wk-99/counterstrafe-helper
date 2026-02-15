@@ -63,7 +63,7 @@ function App() {
       if (oppositeKeyPress) {
         if (oppositeKeyPress.upAt) {
           // Opposite key was released -> calculate delay
-          const delayCalc = performance.now() - oppositeKeyPress.upAt;
+          const delayCalc = Math.round((performance.now() - oppositeKeyPress.upAt) * 100)/1000; // round to 2 decimal places
           setDelay(delayCalc);
           recordCounterstrafe(oppositeKeyPress.key, e.key, undefined, delayCalc);
 
@@ -100,7 +100,7 @@ function App() {
       return; // opposite key is not pressed
     } else {
       // Opposite key is/was pressed (overlapping case)
-      const overlap = performance.now() - oppositeKeyPress.downAt;
+      const overlap = Math.round((performance.now() - oppositeKeyPress.downAt) * 100)/1000; // round to 2 decimal places
       setOverlap(overlap);
       recordCounterstrafe(e.key, oppositeKeyPress.key, overlap, undefined);
 
